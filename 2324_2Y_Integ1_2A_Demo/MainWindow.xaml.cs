@@ -23,8 +23,8 @@ namespace _2324_2Y_Integ1_2A_Demo
     public partial class MainWindow : Window
     {
         Button[] btnNums = new Button[10];
-        int num1 = 0;
-        int num2 = 0;
+        int num1 = 0; //float
+        int num2 = 0; //float
         int ope = -1;
 
         public MainWindow()
