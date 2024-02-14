@@ -19,6 +19,7 @@ namespace _2324_2Y_Integ1_2A_Demo
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// Add more than one function on the calculator based on the functionality of the calculator present in windows.
     public partial class MainWindow : Window
     {
         Button[] btnNums = new Button[10];
@@ -179,5 +180,13 @@ namespace _2324_2Y_Integ1_2A_Demo
                 num2 = 0;
             }
         }
+
+        //percent
+        //square root
+        //square
+        //period (float)
+        //clear
+        //backspace
+
     }
 }
