@@ -63,7 +63,7 @@ namespace _2324_2Y_Integ1_2A_Demo
             if (ope == -1)
                 num1 = int.Parse(input);
             else
-                num2 = int.Parse(input);
+                num2 = int.Parse(input.Substring(1));
 
             tbCalc.Text = input;
         }
@@ -133,25 +133,25 @@ namespace _2324_2Y_Integ1_2A_Demo
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             ope = 0;
-            tbCalc.Text = "";
+            tbCalc.Text += "+";
         }
 
         private void btnMin_Click(object sender, RoutedEventArgs e)
         {
             ope = 1;
-            tbCalc.Text = "";
+            tbCalc.Text += "-";
         }
 
         private void btnMult_Click(object sender, RoutedEventArgs e)
         {
             ope = 2;
-            tbCalc.Text = "";
+            tbCalc.Text += "x";
         }
 
         private void btnDiv_Click(object sender, RoutedEventArgs e)
         {
             ope = 3;
-            tbCalc.Text = "";
+            tbCalc.Text += "/";
         } 
         #endregion
 
@@ -181,9 +181,11 @@ namespace _2324_2Y_Integ1_2A_Demo
             }
         }
 
+        //display part: equation under is the answer
         //percent
         //square root
         //square
+        //exponent
         //period (float)
         //clear
         //backspace
