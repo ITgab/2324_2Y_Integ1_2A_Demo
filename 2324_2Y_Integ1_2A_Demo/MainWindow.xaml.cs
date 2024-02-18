@@ -23,8 +23,8 @@ namespace _2324_2Y_Integ1_2A_Demo
     public partial class MainWindow : Window
     {
         Button[] btnNums = new Button[10];
-        int num1 = 0; //float
-        int num2 = 0; //float
+        double num1 = 0; //float
+        double num2 = 0; //float
         int ope = -1;
 
         public MainWindow()
@@ -50,6 +50,10 @@ namespace _2324_2Y_Integ1_2A_Demo
             btnMult.Content = "x";
             btnDiv.Content = "/";
             btnEnter.Content = "=";
+            btnExp.Content = "^";
+            btnPercent.Content = "%";
+            btnSqrt.Content = "√";
+            btnClr.Content = "Clr";
         }
 
         private void numberEnter(int x)
@@ -61,9 +65,9 @@ namespace _2324_2Y_Integ1_2A_Demo
                 input = input.Substring(1);
 
             if (ope == -1)
-                num1 = int.Parse(input);
+                num1 = double.Parse(input);
             else
-                num2 = int.Parse(input.Substring(1));
+                num2 = double.Parse(input.Substring(1));
 
             tbCalc.Text = input;
         }
@@ -133,26 +137,42 @@ namespace _2324_2Y_Integ1_2A_Demo
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             ope = 0;
-            tbCalc.Text += "+";
+            tbCalc.Text = "+";
         }
 
         private void btnMin_Click(object sender, RoutedEventArgs e)
         {
             ope = 1;
-            tbCalc.Text += "-";
+            tbCalc.Text = "-";
         }
 
         private void btnMult_Click(object sender, RoutedEventArgs e)
         {
             ope = 2;
-            tbCalc.Text += "x";
+            tbCalc.Text = "x";
         }
 
         private void btnDiv_Click(object sender, RoutedEventArgs e)
         {
             ope = 3;
-            tbCalc.Text += "/";
-        } 
+            tbCalc.Text = "/";
+        }
+        private void btnExp_Click(object sender, RoutedEventArgs e)
+        {
+            ope = 4;
+            tbCalc.Text = "^";
+        }
+        private void btnPercent_Click(object sender, RoutedEventArgs e)
+        {
+            ope = 5;
+            tbCalc.Text = "%";
+        }
+        private void btnSqrt_Click(object sender, RoutedEventArgs e)
+        {
+            ope = 6;
+            tbCalc.Text = "√";
+        }
+
         #endregion
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
@@ -171,6 +191,29 @@ namespace _2324_2Y_Integ1_2A_Demo
                 case 3:
                     num1 /= num2;
                     break;
+                case 4:
+                    if (num2 == 0)
+                    {
+                        num1 = 0;
+                    }
+                    else if (num2 == 1)
+                    {
+                        num1 = num1;
+                    }
+                    else
+                    {
+                        for (int i = 1; i < num2; i++)
+                        {
+                            num1 *= num1;
+                        }
+                    }                 
+                    break;
+                case 5:
+                    num1 %= num2;
+                    break;
+                case 6:
+                    num2 = Math.Sqrt(num2);
+                    break;
             }
             
             if(ope > -1)
@@ -180,15 +223,9 @@ namespace _2324_2Y_Integ1_2A_Demo
                 num2 = 0;
             }
         }
-
-        //display part: equation under is the answer
-        //percent
-        //square root
-        //square
-        //exponent
-        //period (float)
-        //clear
-        //backspace
-
+        private void btnClr_Click(object sender, RoutedEventArgs e)
+        {
+            tbCalc.Clear();
+        }
     }
 }
