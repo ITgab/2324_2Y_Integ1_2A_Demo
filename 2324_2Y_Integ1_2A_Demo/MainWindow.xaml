@@ -25,7 +25,7 @@
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btn2_Click"/>
         <Button x:Name="btn1" Content="X" HorizontalAlignment="Left" Margin="138,252,0,0" VerticalAlignment="Top" 
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btn1_Click"/>
-        <Button x:Name="btn0" Content="X" HorizontalAlignment="Left" Margin="83,307,0,0" VerticalAlignment="Top" 
+        <Button x:Name="btn0" Content="X" HorizontalAlignment="Left" Margin="28,307,0,0" VerticalAlignment="Top" 
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btn0_Click" RenderTransformOrigin="-0.752,0.633"/>
         <Button x:Name="btnAdd" Content="X" HorizontalAlignment="Left" Margin="193,142,0,0" VerticalAlignment="Top" 
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnAdd_Click" Background="#FFA7A7A7"/>
@@ -35,8 +35,8 @@
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnMult_Click" Background="#FFA7A7A7"/>
         <Button x:Name="btnDiv" Content="X" HorizontalAlignment="Left" Margin="193,307,0,0" VerticalAlignment="Top" 
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnDiv_Click" Background="#FFA7A7A7"/>
-        <Button x:Name="btnEnter" Content="X" HorizontalAlignment="Left" Margin="138,307,0,0" VerticalAlignment="Top" 
-            Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnEnter_Click" Background="#FFEED2A5"/>
+        <Button x:Name="btnEnter" Content="X" HorizontalAlignment="Left" Margin="83,307,0,0" VerticalAlignment="Top" 
+            Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnEnter_Click" Background="#FFEED2A5" RenderTransformOrigin="-1.168,1.001"/>
         <TextBox x:Name="tbCalc" HorizontalAlignment="Left" Margin="28,22,0,0" TextWrapping="Wrap" Text="" 
                  VerticalAlignment="Top" Width="215" FontSize="28" IsEnabled="False" HorizontalContentAlignment="Right" />
         <Button x:Name="btnExp" Content="X" HorizontalAlignment="Left" Margin="28,87,0,0" VerticalAlignment="Top" 
@@ -47,5 +47,7 @@
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnSqrt_Click"/>
         <Button x:Name="btnClr" Content="X" HorizontalAlignment="Left" Margin="193,87,0,0" VerticalAlignment="Top" 
             Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnClr_Click" Background="#FFE3ABAB"/>
+        <Button x:Name="btnFct" Content="X" HorizontalAlignment="Left" Margin="138,307,0,0" VerticalAlignment="Top" 
+            Width="50" Height="50" FontSize="28" FontWeight="Bold" Click="btnFct_Click" RenderTransformOrigin="-0.752,0.633" Background="#FFA7A7A7"/>
     </Grid>
 </Window>

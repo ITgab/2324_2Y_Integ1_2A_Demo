@@ -23,8 +23,9 @@ namespace _2324_2Y_Integ1_2A_Demo
     public partial class MainWindow : Window
     {
         Button[] btnNums = new Button[10];
-        double num1 = 0; //float
-        double num2 = 0; //float
+        double num1 = 0; 
+        double num2 = 0; 
+        double answ = 1;
         int ope = -1;
 
         public MainWindow()
@@ -54,6 +55,7 @@ namespace _2324_2Y_Integ1_2A_Demo
             btnPercent.Content = "%";
             btnSqrt.Content = "√";
             btnClr.Content = "Clr";
+            btnFct.Content = "!";
         }
 
         private void numberEnter(int x)
@@ -172,6 +174,11 @@ namespace _2324_2Y_Integ1_2A_Demo
             ope = 6;
             tbCalc.Text = "√";
         }
+        private void btnFct_Click(object sender, RoutedEventArgs e)
+        {
+            ope = 7;
+            tbCalc.Text = "!";
+        }
 
         #endregion
 
@@ -202,10 +209,7 @@ namespace _2324_2Y_Integ1_2A_Demo
                     }
                     else
                     {
-                        for (int i = 1; i < num2; i++)
-                        {
-                            num1 *= num1;
-                        }
+                        num1 = Math.Pow(num1, num2);
                     }                 
                     break;
                 case 5:
@@ -214,13 +218,30 @@ namespace _2324_2Y_Integ1_2A_Demo
                 case 6:
                     num2 = Math.Sqrt(num2);
                     break;
+                case 7:
+                    answ = 1;
+                    while (num1 != 1)
+                    {
+                        answ = answ * num1;
+                        num1--;
+                    }
+                    break;
             }
-            
-            if(ope > -1)
+
+            if (ope > -1 && ope < 6)
             {
                 tbCalc.Text = num1.ToString();
                 ope = -1;
                 num2 = 0;
+            }
+            else if (ope == 6)
+            {
+                tbCalc.Text = num2.ToString();
+                ope = -1;
+            }
+            else if (ope == 7)
+            {
+                tbCalc.Text = answ.ToString();
             }
         }
         private void btnClr_Click(object sender, RoutedEventArgs e)
